@@ -1,0 +1,12 @@
+---
+- name: Common | Update repository
+  apt: update_cache=yes cache_valid_time=3600
+
+- name: Common | Install build essential
+  apt: name=build-essential state=installed
+
+- name: Common | Install GIT
+  apt: name=git state=latest
+
+- name: Common | Set the hostname
+  hostname: name={{ system.hostname }}

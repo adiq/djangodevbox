@@ -1,0 +1,19 @@
+---
+- hosts: djangodevbox
+  gather_facts: False
+  vars:
+    system:
+      hostname: "djangodevbox"
+    database:
+      name: "database"
+      password: "toor"
+    django:
+      static: "static"
+      media: "media"
+
+  roles:
+    - system
+    - python
+    - nginx
+    - postgres
+    - uwsgi

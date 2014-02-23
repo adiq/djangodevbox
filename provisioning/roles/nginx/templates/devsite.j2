@@ -1,0 +1,18 @@
+server {
+		listen 80 default_server;
+		server_name localhost;
+
+		location / {
+			include uwsgi_params;
+			uwsgi_pass unix:/tmp/devsite.sock
+		}
+
+		location /static/ {
+			alias /var/www/devsite/{{ django.static }}/;
+		}
+		
+		location /media/ {
+			alias /var/www/devsite/{{ django.media }}/;
+		}
+
+}

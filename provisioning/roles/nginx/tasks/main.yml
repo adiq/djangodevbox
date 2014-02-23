@@ -1,0 +1,10 @@
+---
+- name: NGINX | Install nginx
+  apt: pkg=nginx state=present
+
+- name: NGINX | Copy site config
+  template: src=devsite dest=/etc/nginx/sites-enabled/default
+  notify: restart nginx
+
+- name: NGINX | Run nginx
+  service: name=nginx state=started enabled=true
