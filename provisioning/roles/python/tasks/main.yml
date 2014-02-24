@@ -1,0 +1,13 @@
+---
+- name: Python | Install Python
+  apt: pkg={{ item }} state=latest
+  with_items:
+    - python
+    - python-dev
+    - python-setuptools
+
+- name: Python | Install PIP
+  easy_install: name=pip
+
+- name: Python | Install VirtualEnv
+  pip: name=virtualenv

@@ -1,0 +1,7 @@
+---
+- name: DjangoBase | Symlink project
+  command: ln -s /vagrant/{{ django.projectdir }} /var/www/devsite
+
+- name: DjangoBase | Create VirtualEnv
+  command: virtualenv /var/www/devsite-env --no-site-packages
+

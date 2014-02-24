@@ -4,12 +4,17 @@
   vars:
     system:
       hostname: "djangodevbox"
-    database:
+    postgres:
       name: "database"
+      user: "username"
       password: "toor"
     django:
+      projectdir: "project"
       static: "static"
       media: "media"
+    uwsgi:
+      appname: "default"
+      processes: 5
 
   roles:
     - system
@@ -17,3 +22,4 @@
     - nginx
     - postgres
     - uwsgi
+    - djangobase
