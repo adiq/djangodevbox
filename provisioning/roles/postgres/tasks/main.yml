@@ -1,20 +1,24 @@
 ---
 - name: Postgres | Install Postgres Server
   apt: pkg=postgresql state=present
+  with_items:
+    - postgresql
+    - postgresql-client
+    - postgresql-server-dev-all
+    - libpq-dev
 
-- name: Postgres | Install Postgres Client
-  apt: pkg=postgresql-client state=present
+- name: Postgres | Configure access policy
+  template: src=pg_hba.conf.j2 dest=/etc/postgresql/9.1/main/pg_hba.conf
 
 - name: Postgres | Run Postgres
   service: name=postgresql state=started enabled=true
 
 - name: Postgres | Install Python Postgres lib (psycopg2)
-  pip: name=psycopg2
+  apt: pkg=python-psycopg2
 
 - name: Postgres | Setup database
-  sudo_user: postgres
   postgresql_db:
-    db: "{{ postgres.database }}"
+    name: "{{ postgres.name }}"
     encoding: 'UTF-8'
     lc_collate: 'en_US.UTF-8'
     lc_ctype: 'en_US.UTF-8'
@@ -22,10 +26,9 @@
     state: present
 
 - name: Postgres | Setup database user
-    sudo_user: postgres
-    postgresql_user:
-      db: "{{ postgres.database }}"
-      user: "{{ postgres.user }}"
-      password: "{{ postgres.password }}"
-      role_attr_flags: "CREATEDB,SUPERUSER"
-      state: present
+  postgresql_user:
+    db: "{{ postgres.name }}"
+    user: "{{ postgres.user }}"
+    password: "{{ postgres.password }}"
+    role_attr_flags: "CREATEDB,SUPERUSER"
+    state: present

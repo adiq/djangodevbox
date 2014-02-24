@@ -3,4 +3,4 @@
   pip: name=uwsgi
 
 - name: uWSGI | Copy default configuration
-  template: src=uwsgi dest=/var/www/uwsgi.ini
+  template: src=uwsgi.j2 dest=/var/www/uwsgi.ini

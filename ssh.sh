@@ -1,5 +1,3 @@
 #!/bin/sh
 
-vagrant ssh
-cd /var/www/devsite
-source ../devsite-env/bin/activate
+ssh vagrant@192.168.100.2 "cd /var/www/devsite && source ../devsite-env/bin/activate"
