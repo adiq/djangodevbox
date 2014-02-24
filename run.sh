@@ -2,4 +2,4 @@
 
 sh ./ssh.sh
 pip install -r requirements.txt
-../devsite-env/bin/uwsgi --ini uwsgi.ini
+../devsite-env/bin/uwsgi --ini ../uwsgi.ini
