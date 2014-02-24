@@ -4,7 +4,6 @@
 
 - name: NGINX | Copy site config
   template: src=devsite.j2 dest=/etc/nginx/sites-enabled/default
-  notify: restart nginx
 
 - name: NGINX | Run nginx
   service: name=nginx state=started enabled=true

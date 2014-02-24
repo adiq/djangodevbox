@@ -1,6 +1,6 @@
 ---
 - name: uWSGI | Install uWSGI
-  pip: name=uwsgi
+  pip: name=uwsgi virtualenv=/var/www/devsite-env
 
 - name: uWSGI | Copy default configuration
   template: src=uwsgi.j2 dest=/var/www/uwsgi.ini
