@@ -8,3 +8,4 @@ env = DJANGO_SETTINGS_MODULE={{ uwsgi.appname }}.settings
 module = {{ uwsgi.appname }}.wsgi:application
 processes = {{ uwsgi.processes }}
 master = true
+no-site=True
