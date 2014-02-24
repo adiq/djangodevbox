@@ -20,6 +20,5 @@
     - system
     - python
     - nginx
-    - postgres
     - uwsgi
     - djangobase

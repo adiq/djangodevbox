@@ -10,3 +10,6 @@
 
 - name: Common | Set the hostname
   hostname: name={{ system.hostname }}
+
+- name: Common | Create directory for project
+  command: mkdir -p /var/www
