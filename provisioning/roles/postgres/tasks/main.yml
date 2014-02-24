@@ -17,6 +17,7 @@
   apt: pkg=python-psycopg2
 
 - name: Postgres | Setup database
+  sudo_user: postgres
   postgresql_db:
     name: "{{ postgres.name }}"
     encoding: 'UTF-8'
@@ -26,6 +27,7 @@
     state: present
 
 - name: Postgres | Setup database user
+  sudo_user: postgres
   postgresql_user:
     db: "{{ postgres.name }}"
     user: "{{ postgres.user }}"

@@ -19,6 +19,7 @@
   roles:
     - system
     - python
-    - nginx
+    - postgres
     - uwsgi
+    - nginx
     - djangobase
