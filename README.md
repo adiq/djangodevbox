@@ -32,29 +32,26 @@ Installation
 You must have installed all needed dependencies.
 TODO: Write how install dependencies.
 
-To install VM run:
-
-```
-vagrant up --no-provision
-```
+Configure playbook (if needed) and copy your django project to correct directory (default ./project).
+TODO: Write playbook description.
 
 
-To setup VM to run provisioning (enter password "vagrant" when asked):
+To install VM and run provisioning (enter password "**vagrant**" when asked):
 
 ```
 sh setup.sh
 ```
 
+**And watch, how the magic happens.**
 
-To run provisioning:
+
+
+
+To run provisioning manually:
 
 ```
 vagrant provision
 ```
-
-
-**And watch, how the magic happens.**
-
 
 
 For Windows (without scripts):
@@ -62,8 +59,8 @@ For Windows (without scripts):
 ```
 vagrant up --no-provisioning
 vagrant ssh
-sudo apt-get update
-sudo apt-get install python
+sudo apt-get update -y
+sudo apt-get install python -y
 exit
 vagrant provision
 ```
