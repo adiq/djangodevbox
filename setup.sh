@@ -2,8 +2,8 @@
 
 echo "DJANGODEVBOX > Booting up vagrant box..."
 vagrant up --no-provision
-echo "DJANGODEVBOX > Configuring vagrant box... (enter password 'vagrant' if needed)"
-ssh vagrant@192.168.100.2 "sudo apt-get update -y && sudo apt-get install python -y"
+echo "DJANGODEVBOX > Upgrading distro and configuring vagrant box..."
+vagrant ssh -c "sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt-get install python -y"
 echo "DJANGODEVBOX > Now you can use 'vagrant ssh' to open ssh connection or ./run.sh to run django project."
 echo "DJANGODEVBOX > Remember to configure project in provisioning/playbook.yml to succeed!"
 
