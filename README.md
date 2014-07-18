@@ -65,6 +65,10 @@ exit
 vagrant provision
 ```
 
+What we need to do?
+-------------
+- Create own Vagrant .box
+
 
 License
 -------------
