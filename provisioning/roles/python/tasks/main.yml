@@ -1,6 +1,6 @@
 ---
 - name: Python | Install Python
-  apt: pkg={{ item }} state=latest
+  apt: pkg={{ item }} state=present
   with_items:
     - python
     - python-dev
