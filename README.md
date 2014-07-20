@@ -4,9 +4,7 @@ Django DEVBOX
 
 This project aims to deliver complete, easy-to-setup Vagrant box for developing Django Apps with Postgres.
 
-## Currently: *Should Work ;)*
-
-But it's not super-fast becouse we need to upgrade distro on setup (out-dated dependencies).
+## Currently: *Working :D*
 
 -------------
 
@@ -65,7 +63,7 @@ vagrant up
 
 What we need to do?
 -------------
-- Create own Vagrant .box
+- ~~Create own Vagrant .box~~ (done)
 - Extend provisioning to support other databases
 
 
