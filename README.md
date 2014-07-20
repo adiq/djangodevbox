@@ -40,7 +40,7 @@ TODO: Write playbook description.
 To install VM and run provisioning (enter password "**vagrant**" when asked):
 
 ```
-sh setup.sh
+vagrant up
 ```
 
 **And watch, how the magic happens.**
@@ -54,12 +54,6 @@ To run provisioning manually:
 vagrant provision
 ```
 
-
-For Windows (without scripts):
-
-```
-vagrant up
-```
 
 What we need to do?
 -------------
