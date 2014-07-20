@@ -60,12 +60,7 @@ vagrant provision
 For Windows (without scripts):
 
 ```
-vagrant up --no-provisioning
-vagrant ssh
-sudo apt-get update -y
-sudo apt-get install python -y
-exit
-vagrant provision
+vagrant up
 ```
 
 What we need to do?
