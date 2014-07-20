@@ -1,6 +1,6 @@
 ---
 - name: Postgres | Install Postgres Server
-  apt: pkg=postgresql state=present
+  apt: pkg={{ item }} state=present
   with_items:
     - postgresql
     - postgresql-client
