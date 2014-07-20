@@ -2,9 +2,6 @@
 
 echo "DJANGODEVBOX > Booting up vagrant box..."
 vagrant up --no-provision
-echo "DJANGODEVBOX > Upgrading distro and configuring vagrant box..."
-vagrant ssh -c "sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt-get install python -y"
-echo "DJANGODEVBOX > Now you can use 'vagrant ssh' to open ssh connection or ./run.sh to run django project."
 echo "DJANGODEVBOX > Remember to configure project in provisioning/playbook.yml to succeed!"
 
 read -p "DJANGODEVBOX > Did you setup playbook and copy your django project? (Y/n): " choice
@@ -14,3 +11,5 @@ case "$choice" in
         vagrant provision;;
   * ) echo "DJANGODEVBOX > Thats not good. Configure playbook and copy your django project. Then run 'vagrant provision' manually :)";;
 esac
+
+echo "DJANGODEVBOX > Now you can use 'vagrant ssh' to open ssh connection or ./run.sh to run django project (only after provisioning)."
